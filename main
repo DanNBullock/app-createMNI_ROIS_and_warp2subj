@@ -5,14 +5,13 @@
 #SBATCH --mem=1G
 #SBATCH --time=00:15:00
 
-# Copyright (c) 2020 brainlife.io at University of Texas at Austin and Indiana University
-# 
-# This is the main file run by the brainlife.io orchestration system
-#
-# Author: Franco Pestilli
+echo "stealing MNI reference NIFTI"
+time singularity exec docker://brainlife/ants:2.2.0 cp /HCPpipelines/global/templates/MNI152_T1_1mm_brain.nii.gz .
 
-# make output directory
-mkdir -p out_dir
+#allow access to it
+chmod 777 MNI152_T1_1mm_brain.nii.gz 
 
-# run the actual python code
-singularity exec docker://brainlife/dipy:1.1.1 python3 main.py
+time singularity exec docker://brainlife/dipy:1.4.1 create_ROIs/createROIS.py
+
+echo "warping coordinates from mni space"
+time singularity exec docker://brainlife/ants:2.2.0 ROI_warp/CoordTransform.sh

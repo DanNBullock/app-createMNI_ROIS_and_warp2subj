@@ -1,0 +1,4 @@
+[submodule "wma_pyTools"]
+	path = wma_pyTools
+	url = git@github.com:DanNBullock/wma_pyTools.git
+	branch = packageVers

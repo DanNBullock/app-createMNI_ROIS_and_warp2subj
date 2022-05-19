@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#local stuff
+testdata/
+output/
+MNI/
+MNI152_T1_1mm_brain.nii.gz
+config.json
+

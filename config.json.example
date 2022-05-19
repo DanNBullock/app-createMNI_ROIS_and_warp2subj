@@ -1,4 +1,6 @@
 {
-    "t1": "t1.nii.gz",
-    "outres": "1 1 1"
+    "t1": "testdata/t1.nii.gz",
+    "mask": "testdata/brainMask.nii.gz",
+    "spheres": "0,0,0,3;5,5,5,5",
+    "planes": "x=5; y=-7"
 }
