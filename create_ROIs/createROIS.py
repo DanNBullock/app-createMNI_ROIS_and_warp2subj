@@ -45,6 +45,10 @@ sphereRequests=config['spheres']
 sphereRequests=sphereRequests.split(';')
 import re
 
+#remove blank if it's in there
+if '' in sphereRequests:
+    sphereRequests.remove('')
+
 
 for sphereIterator,iSphereRequests in enumerate(sphereRequests):
     currFullRequest=iSphereRequests
@@ -57,6 +61,9 @@ for sphereIterator,iSphereRequests in enumerate(sphereRequests):
 planeRequests=config['planes']
 #split at the split char
 planeRequests=planeRequests.split(';')
+
+if '' in planeRequests:
+    planeRequests.remove('')
 
 for planeIterator,iPlaneRequests in enumerate(planeRequests):
     currFullRequest=iPlaneRequests
