@@ -134,4 +134,5 @@ output/
 MNI/
 MNI152_T1_1mm_brain.nii.gz
 config.json
+t1*
 
